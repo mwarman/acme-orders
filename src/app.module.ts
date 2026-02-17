@@ -4,12 +4,14 @@ import { AppController } from './app.controller.js';
 import { CommonModule } from './common/common.module.js';
 import { HttpErrorFilter } from './common/http-error.filter.js';
 import { IdentityMiddleware } from './common/identity.middleware.js';
+import { CustomersModule } from './customers/customers.module.js';
 import { DatabaseModule } from './db/database.module.js';
 
 @Module({
   imports: [
     CommonModule,
     DatabaseModule,
+    CustomersModule,
   ],
   controllers: [AppController],
   providers: [
