@@ -1,6 +1,7 @@
 import { type MiddlewareConsumer, Module, type NestModule, ValidationPipe } from '@nestjs/common';
 import { APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { AppController } from './app.controller.js';
+import { CatalogModule } from './catalog/catalog.module.js';
 import { CommonModule } from './common/common.module.js';
 import { HttpErrorFilter } from './common/http-error.filter.js';
 import { IdentityMiddleware } from './common/identity.middleware.js';
@@ -12,6 +13,7 @@ import { DatabaseModule } from './db/database.module.js';
     CommonModule,
     DatabaseModule,
     CustomersModule,
+    CatalogModule,
   ],
   controllers: [AppController],
   providers: [
