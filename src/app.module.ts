@@ -7,6 +7,7 @@ import { HttpErrorFilter } from './common/http-error.filter.js';
 import { IdentityMiddleware } from './common/identity.middleware.js';
 import { CustomersModule } from './customers/customers.module.js';
 import { DatabaseModule } from './db/database.module.js';
+import { InventoryModule } from './inventory/inventory.module.js';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { DatabaseModule } from './db/database.module.js';
     DatabaseModule,
     CustomersModule,
     CatalogModule,
+    InventoryModule,
   ],
   controllers: [AppController],
   providers: [
