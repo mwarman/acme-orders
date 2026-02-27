@@ -8,6 +8,7 @@ import { IdentityMiddleware } from './common/identity.middleware.js';
 import { CustomersModule } from './customers/customers.module.js';
 import { DatabaseModule } from './db/database.module.js';
 import { InventoryModule } from './inventory/inventory.module.js';
+import { NotificationsModule } from './notifications/notifications.module.js';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { InventoryModule } from './inventory/inventory.module.js';
     CustomersModule,
     CatalogModule,
     InventoryModule,
+    NotificationsModule,
   ],
   controllers: [AppController],
   providers: [
