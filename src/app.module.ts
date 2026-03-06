@@ -9,6 +9,7 @@ import { CustomersModule } from './customers/customers.module.js';
 import { DatabaseModule } from './db/database.module.js';
 import { InventoryModule } from './inventory/inventory.module.js';
 import { NotificationsModule } from './notifications/notifications.module.js';
+import { PaymentsModule } from './payments/payments.module.js';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { NotificationsModule } from './notifications/notifications.module.js';
     CatalogModule,
     InventoryModule,
     NotificationsModule,
+    PaymentsModule,
   ],
   controllers: [AppController],
   providers: [
