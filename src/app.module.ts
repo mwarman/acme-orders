@@ -9,6 +9,7 @@ import { CustomersModule } from './customers/customers.module.js';
 import { DatabaseModule } from './db/database.module.js';
 import { InventoryModule } from './inventory/inventory.module.js';
 import { NotificationsModule } from './notifications/notifications.module.js';
+import { OrdersModule } from './orders/orders.module.js';
 import { PaymentsModule } from './payments/payments.module.js';
 
 @Module({
@@ -20,6 +21,7 @@ import { PaymentsModule } from './payments/payments.module.js';
     InventoryModule,
     NotificationsModule,
     PaymentsModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [
