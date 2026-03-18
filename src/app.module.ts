@@ -11,6 +11,7 @@ import { InventoryModule } from './inventory/inventory.module.js';
 import { NotificationsModule } from './notifications/notifications.module.js';
 import { OrdersModule } from './orders/orders.module.js';
 import { PaymentsModule } from './payments/payments.module.js';
+import { ReportingModule } from './reporting/reporting.module.js';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { PaymentsModule } from './payments/payments.module.js';
     NotificationsModule,
     PaymentsModule,
     OrdersModule,
+    ReportingModule,
   ],
   controllers: [AppController],
   providers: [
