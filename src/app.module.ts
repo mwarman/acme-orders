@@ -11,6 +11,7 @@ import { InventoryModule } from './inventory/inventory.module.js';
 import { NotificationsModule } from './notifications/notifications.module.js';
 import { OrdersModule } from './orders/orders.module.js';
 import { PaymentsModule } from './payments/payments.module.js';
+import { RefundsModule } from './refunds/refunds.module.js';
 import { ReportingModule } from './reporting/reporting.module.js';
 
 @Module({
@@ -23,6 +24,7 @@ import { ReportingModule } from './reporting/reporting.module.js';
     NotificationsModule,
     PaymentsModule,
     OrdersModule,
+    RefundsModule,
     ReportingModule,
   ],
   controllers: [AppController],
