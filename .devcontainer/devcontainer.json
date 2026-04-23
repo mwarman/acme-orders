@@ -1,0 +1,15 @@
+{
+  "name": "acme-orders (Agentic Coding with Claude Code)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "node",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "forwardPorts": [3000],
+  "mounts": ["source=acme-orders-claude-config,target=/home/node/.claude,type=volume"],
+  "customizations": {
+    "vscode": {
+      "extensions": ["oxc.oxc-vscode", "vitest.explorer"]
+    }
+  }
+}
