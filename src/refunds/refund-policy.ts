@@ -46,7 +46,7 @@ export function daysSince(isoTimestamp: string, now: Date): number {
 
 export function isWithinWindow(reason: RefundReason, placedAt: string, now: Date): boolean {
   const limit = reason === 'DEFECTIVE' ? DEFECT_WINDOW_DAYS : RETURN_WINDOW_DAYS;
-  return daysSince(placedAt, now) <= limit;
+  return daysSince(placedAt, now) < limit;
 }
 
 /** Who may approve a refund of this size (REF-6). */
