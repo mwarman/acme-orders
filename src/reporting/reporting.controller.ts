@@ -19,4 +19,9 @@ export class ReportingController {
   refundSummary() {
     return this.reporting.refundSummary();
   }
+
+  @Get('refunds/export')
+  refundExport() {
+    return this.reporting.refundExport();
+  }
 }

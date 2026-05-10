@@ -24,4 +24,22 @@ export class ReportingService {
        FROM refunds GROUP BY reason, status ORDER BY reason, status`,
     ).all();
   }
+
+  refundExport() {
+    const refunds = this.database.db.prepare('SELECT * FROM refunds ORDER BY id').all() as any[];
+    return refunds.map((r) => {
+      const order = this.database.db.prepare('SELECT customer_id FROM orders WHERE id = ?').get(r.order_id) as any;
+      const customer = this.database.db.prepare('SELECT name, email FROM customers WHERE id = ?').get(order.customer_id) as any;
+      return {
+        refundId: r.id,
+        orderId: r.order_id,
+        status: r.status,
+        reason: r.reason,
+        amountCents: r.amount_cents,
+        customerName: customer.name,
+        customerEmail: customer.email,
+        createdAt: r.created_at,
+      };
+    });
+  }
 }
