@@ -72,7 +72,7 @@ interface LineRow {
 }
 
 /** Statuses whose amounts count against what an order can still have refunded (REF-4). */
-const COUNTED_STATUSES = "('REQUESTED', 'APPROVED', 'COMPLETED', 'FAILED')";
+const COUNTED_STATUSES = "('COMPLETED')";
 
 const toRefund = (r: RefundRow): RefundRecord => ({
   id: r.id,

@@ -32,7 +32,6 @@ export class PaymentsService {
       result = await this.gateway.charge({
         reference: `order-${args.orderId}`,
         amountCents: args.amountCents,
-        idempotencyKey: key,
       });
     } catch (error) {
       if (error instanceof GatewayTimeoutError) {

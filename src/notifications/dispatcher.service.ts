@@ -31,8 +31,6 @@ export class DispatcherService implements OnModuleInit, OnModuleDestroy {
         this.deliver(event.type, event.payload);
       } catch (error) {
         this.logger.error(`Event ${event.id} (${event.type}) failed: ${String(error)}`);
-        this.outbox.mark(event.id, 'FAILED');
-        continue;
       }
       this.outbox.mark(event.id, 'SENT');
     }

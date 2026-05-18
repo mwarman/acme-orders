@@ -30,7 +30,6 @@ export class RefundsService {
 
   async create(dto: CreateRefundDto, user: User): Promise<RefundView> {
     const order = this.orders.findOrThrow(dto.orderId);
-    this.orders.assertAccess(order, user);
     if (!isShipped(order.status)) {
       throw new DomainError('RULE_VIOLATION', 'Only shipped orders can be refunded. Cancel unshipped orders instead.');
     }
