@@ -31,4 +31,8 @@ describe('order state machine', () => {
     expect(isShipped('FULFILLED')).toBe(true);
     expect(isShipped('CLOSED')).toBe(true);
   });
+
+  it('treats DELIVERED as terminal', () => {
+    expect(canTransition('DELIVERED', 'CLOSED')).toBe(false);
+  });
 });

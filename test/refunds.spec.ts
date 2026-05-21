@@ -134,4 +134,12 @@ describe('refunds', () => {
     const list = await ctx.get(`/orders/${order.id}/refunds`, alice).expect(200);
     expect(list.body).toHaveLength(1);
   });
+
+  it('refunds promo-code items at the price paid (REF-8)', async () => {
+    const order = await paidOrder(ctx, [{ sku: 'SKU-STOVE-1', qty: 2 }], alice, 'SAVE10');
+    await ctx.post(`/orders/${order.id}/ship`, support).expect(201);
+    await ctx.post(`/orders/${order.id}/deliver`, support).expect(201);
+    const res = await request(order.id, 'UNOPENED_RETURN', [{ orderItemId: order.items[0].id, qty: 1 }]).expect(201);
+    expect(res.body.amountCents).toBe(4050);
+  });
 });
